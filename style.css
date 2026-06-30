@@ -1,0 +1,111 @@
+body {
+    background-color: #000;
+    color: #8813d5;
+    text-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+}
+
+/* Hacker Glow Effect */
+.hacker-glow {
+    text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+}
+
+/* Matrix Background */
+.matrix-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    opacity: 0.3;
+    z-index: 0;
+}
+
+/* Core Animation */
+.core-engine {
+    box-shadow: 0 0 15px #166534;
+    animation: rotate-border 4s linear infinite;
+}
+
+@keyframes rotate-border {
+    0% { border-color: #22c55e; box-shadow: 0 0 10px #22c55e; }
+    50% { border-color: #166534; box-shadow: 0 0 25px #22c55e; }
+    100% { border-color: #22c55e; box-shadow: 0 0 10px #22c55e; }
+}
+
+/* Scanner Effect */
+.scanner-effect {
+    border: 1px solid #22c55e;
+    border-radius: 50%;
+    animation: scan 2s infinite ease-out;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+}
+
+@keyframes scan {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Message UI */
+.message {
+    padding: 8px 12px;
+    border-radius: 2px;
+    max-width: 85%;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    border: 1px solid transparent;
+}
+
+.message.user {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: #22c55e;
+    color: #fff;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.message.ai {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: #166534;
+    color: #22c55e;
+    align-self: flex-start;
+}
+
+/* Cursor */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: #22c55e;
+    animation: blink 0.8s infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Scrollbar */
+.scrollbar-hacker::-webkit-scrollbar { width: 4px; }
+.scrollbar-hacker::-webkit-scrollbar-track { background: #000; }
+.scrollbar-hacker::-webkit-scrollbar-thumb { background: #166534; }
+
+/* ==========================================
+   ✅ SCROLL FIX (IMPORTANT)
+========================================== */
+
+/* Allow flex child to scroll */
+#chat-window {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+/* Fix parent flex containers */
+main .grid > div {
+    min-height: 0;
+}
+
+/* Extra safety fix */
+.bg-black\/80 {
+    min-height: 0;
+}
